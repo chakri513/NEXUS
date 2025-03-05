@@ -43,6 +43,11 @@ We welcome contributions to Nexus! To contribute:
 
 ## OUTPUTS
 ![Screenshot 2025-03-05 175419](https://github.com/user-attachments/assets/8e99e66e-e258-46b5-abda-8c5711b9d0e3)
+![Screenshot 2025-03-05 175523](https://github.com/user-attachments/assets/f9ed962c-fac5-4ae5-8f24-aecea91efaf7)
+![Screenshot 2025-03-05 175553](https://github.com/user-attachments/assets/ecfd2299-964c-4875-a983-de9e6e08f1c6)
+![Screenshot 2025-03-05 175619](https://github.com/user-attachments/assets/6f17e079-a509-4137-a4c1-d3942e9465ed)
+![Screenshot 2025-03-05 175808](https://github.com/user-attachments/assets/ca34df72-88e9-43d3-bd4d-38c3e6fac5d0)
+![Screenshot 2025-03-05 175715](https://github.com/user-attachments/assets/bc58655e-b992-48d7-b3cd-de78b8ae79f4)
 ![Screenshot 2025-03-05 175642](https://github.com/user-attachments/assets/8e7ea8cf-ffd7-494c-9617-972a1a192be3)
 
 

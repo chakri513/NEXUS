@@ -41,9 +41,8 @@ We welcome contributions to Nexus! To contribute:
 4.  Push your changes to your fork.
 5.  Submit a pull request.
 
-
-##Outputs
-
+## OUTPUTS
+![Screenshot 2025-03-05 175419](https://github.com/user-attachments/assets/8e99e66e-e258-46b5-abda-8c5711b9d0e3)
 
 
 ## Contact

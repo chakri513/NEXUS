@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazard Zones - Zygen</title>
+    <link rel="stylesheet" href="../css/hazards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+        
+        <div class="map-controls">
+            <button class="control-btn" onclick="window.location.href='disaster_map.html'">
+                <i class="fas fa-exclamation-triangle"></i> Incidents
+            </button>
+            <button class="control-btn" onclick="window.location.href='resources_real.html'">
+                <i class="fas fa-truck-medical"></i> Resources
+            </button>
+            <button class="control-btn active">
+                <i class="fas fa-warning"></i> Hazards
+            </button>
+            <button class="control-btn" onclick="window.location.href='evacuation.html'">
+                <i class="fas fa-running"></i> Evacuation
+            </button>
+        </div>
+    </header>
+
+    <main class="hazard-map-main">
+        <div class="hazard-sidebar">
+            <div class="hazard-alerts">
+                <h3>Active Hazard Alerts</h3>
+                <div class="alert-level">
+                    <span class="alert-indicator high"></span>
+                    <span>High Risk Areas: 3</span>
+                </div>
+                <div id="hazardAlerts" class="alert-items">
+                    <!-- Alerts will be added dynamically -->
+                </div>
+            </div>
+
+            <div class="hazard-filters">
+                <h3>Hazard Types</h3>
+                <div class="filter-options">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked data-type="flood">
+                        <span class="checkmark flood"></span>
+                        Flood Zones
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked data-type="fire">
+                        <span class="checkmark fire"></span>
+                        Fire Risk Areas
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked data-type="earthquake">
+                        <span class="checkmark earthquake"></span>
+                        Fault Lines
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked data-type="landslide">
+                        <span class="checkmark landslide"></span>
+                        Landslide Risk
+                    </label>
+                </div>
+            </div>
+
+            <div class="safety-guidelines">
+                <h3>Safety Guidelines</h3>
+                <div class="guidelines-list">
+                    <div class="guideline-item">
+                        <i class="fas fa-water"></i>
+                        <div class="guideline-content">
+                            <h4>Flood Safety</h4>
+                            <button class="view-guidelines" data-type="flood">View Guidelines</button>
+                        </div>
+                    </div>
+                    <div class="guideline-item">
+                        <i class="fas fa-fire"></i>
+                        <div class="guideline-content">
+                            <h4>Fire Safety</h4>
+                            <button class="view-guidelines" data-type="fire">View Guidelines</button>
+                        </div>
+                    </div>
+                    <div class="guideline-item">
+                        <i class="fas fa-house-damage"></i>
+                        <div class="guideline-content">
+                            <h4>Earthquake Safety</h4>
+                            <button class="view-guidelines" data-type="earthquake">View Guidelines</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-overlay">
+                <div class="overlay-controls">
+                    <button class="overlay-btn" id="toggleRiskZones">
+                        <i class="fas fa-layer-group"></i> Risk Zones
+                    </button>
+                    <button class="overlay-btn" id="toggleSafeZones">
+                        <i class="fas fa-shield-alt"></i> Safe Zones
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hazard-panel">
+            <div class="risk-assessment">
+                <h3>Risk Assessment</h3>
+                <div class="risk-meters">
+                    <div class="risk-meter">
+                        <div class="meter-header">
+                            <span>Flood Risk</span>
+                            <span class="risk-level high">High</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 85%; background: #FF4848;"></div>
+                        </div>
+                    </div>
+                    <div class="risk-meter">
+                        <div class="meter-header">
+                            <span>Fire Risk</span>
+                            <span class="risk-level moderate">Moderate</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 60%; background: #FFA726;"></div>
+                        </div>
+                    </div>
+                    <div class="risk-meter">
+                        <div class="meter-header">
+                            <span>Seismic Activity</span>
+                            <span class="risk-level low">Low</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 25%; background: #4CAF50;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-conditions">
+                <h3>Weather Conditions</h3>
+                <div class="weather-info">
+                    <div class="weather-item">
+                        <i class="fas fa-temperature-high"></i>
+                        <div class="weather-data">
+                            <span>32°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-item">
+                        <i class="fas fa-tint"></i>
+                        <div class="weather-data">
+                            <span>75mm</span>
+                        </div>
+                    </div>
+                    <div class="weather-item">
+                        <i class="fas fa-wind"></i>
+                        <div class="weather-data">
+                            <span>25 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>    </footer>
+
+    <!-- Safety Guidelines Modal -->
+    <div id="guidelinesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Safety Guidelines</h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTu3TERfPEhKOOFlEgbGKvDCYi_4WQQg&libraries=places,directions"></script>
+    <script src="../js/hazards.js"></script>
+</body>
+</html>

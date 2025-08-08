@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Now - Zygen</title>
+    <link rel="stylesheet" href="../css/volunteer_now.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+    </header>
+
+    <main class="volunteer-main">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Make a Difference Today</h1>
+                <p>Join our community of volunteers and help those in need</p>
+                <button class="cta-button" onclick="scrollToRegistration()">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    Volunteer Now
+                </button>
+            </div>
+        </section>
+
+        <!-- Opportunities Section -->
+        <section class="opportunities-section">
+            <h2><i class="fas fa-hands-helping"></i> Current Opportunities</h2>
+            <div class="opportunities-grid">
+                <div class="opportunity-card">
+                    <img src="https://img.freepik.com/free-photo/medium-shot-people-collecting-donations_23-2149182005.jpg" alt="Food Distribution">
+                    <div class="opportunity-content">
+                        <span class="badge urgent">Urgent</span>
+                        <h3>Food Distribution</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vijayawada Central</p>
+                        <p class="description">Help distribute food packages to affected families in flood-hit areas.</p>
+                        <div class="requirements">
+                            <span><i class="fas fa-clock"></i> 4-6 hours</span>
+                            <span><i class="fas fa-users"></i> 10 needed</span>
+                        </div>
+                        <button class="apply-btn" onclick="applyForOpportunity('food-distribution')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="opportunity-card">
+                    <img src="https://img.freepik.com/free-photo/doctor-examining-elderly-patient_23-2148968901.jpg" alt="Medical Camp">
+                    <div class="opportunity-content">
+                        <span class="badge medical">Medical</span>
+                        <h3>Medical Camp Support</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Benz Circle</p>
+                        <p class="description">Assist medical professionals in conducting health checkups.</p>
+                        <div class="requirements">
+                            <span><i class="fas fa-clock"></i> 8 hours</span>
+                            <span><i class="fas fa-users"></i> 5 needed</span>
+                        </div>
+                        <button class="apply-btn" onclick="applyForOpportunity('medical-camp')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="opportunity-card">
+                    <img src="https://img.freepik.com/free-photo/volunteers-helping-with-donations_23-2149182013.jpg" alt="Supply Distribution">
+                    <div class="opportunity-content">
+                        <span class="badge regular">Regular</span>
+                        <h3>Supply Distribution</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Gandhi Nagar</p>
+                        <p class="description">Help sort and distribute emergency supplies to affected areas.</p>
+                        <div class="requirements">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-users"></i> 8 needed</span>
+                        </div>
+                        <button class="apply-btn" onclick="applyForOpportunity('supply-distribution')">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section class="registration-section" id="registration">
+            <h2><i class="fas fa-user-plus"></i> Volunteer Registration</h2>
+            <form id="volunteerForm" class="registration-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Skills</label>
+                        <div class="skills-grid">
+                            <label class="skill-checkbox">
+                                <input type="checkbox" name="skills" value="medical">
+                                <span>Medical</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" name="skills" value="driving">
+                                <span>Driving</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" name="skills" value="cooking">
+                                <span>Cooking</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" name="skills" value="teaching">
+                                <span>Teaching</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" name="skills" value="languages">
+                                <span>Languages</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" name="skills" value="technical">
+                                <span>Technical</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Availability</label>
+                        <div class="availability-grid">
+                            <label class="availability-checkbox">
+                                <input type="checkbox" name="availability" value="weekday-morning">
+                                <span>Weekday Morning</span>
+                            </label>
+                            <label class="availability-checkbox">
+                                <input type="checkbox" name="availability" value="weekday-evening">
+                                <span>Weekday Evening</span>
+                            </label>
+                            <label class="availability-checkbox">
+                                <input type="checkbox" name="availability" value="weekend-morning">
+                                <span>Weekend Morning</span>
+                            </label>
+                            <label class="availability-checkbox">
+                                <input type="checkbox" name="availability" value="weekend-evening">
+                                <span>Weekend Evening</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Why do you want to volunteer?</label>
+                        <textarea id="message" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Application
+                </button>
+            </form>
+        </section>
+
+        <!-- Social Integration -->
+        <section class="social-section">
+            <h2><i class="fas fa-share-alt"></i> Share & Connect</h2>
+            <p>Help spread the word about volunteer opportunities</p>
+            <div class="social-buttons">
+                <a href="#" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    Share
+                </a>
+                <a href="#" class="social-btn x">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo">
+                        <path fill="#FFFFFF" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                    Post
+                </a>
+                <a href="#" class="social-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Share
+                </a>
+                <a href="#" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    Share
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <div class="checkmark draw"></div>
+                </div>
+            </div>
+            <h2>Thank You for Volunteering!</h2>
+            <div class="success-message">
+                <p class="main-message">Your application has been submitted successfully!</p>
+                <div class="next-steps">
+                    <h3>What's Next?</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> Check your email for confirmation</li>
+                        <li><i class="fas fa-phone-alt"></i> Expect a call within 24 hours</li>
+                        <li><i class="fas fa-users"></i> Join our volunteer community</li>
+                    </ul>
+                </div>
+                <div class="share-prompt">
+                    <p>Help spread the word!</p>
+                    <div class="modal-social-buttons">
+                        <button class="modal-social facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="modal-social x">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo">
+                                <path fill="#FFFFFF" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </button>
+                        <button class="modal-social whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="modal-social instagram">
+                            <i class="fab fa-instagram"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="modal-btn" onclick="closeModal(),window.location.href='home.html'">Got it!</button>
+        </div>
+    </div>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>
+    </footer>
+
+    <script src="../js/volunteer_now.js"></script>
+</body>
+</html> 

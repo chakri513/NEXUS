@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Zygen</title>
+    <link rel="stylesheet" href="../css/resources_real.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+        
+        <div class="map-controls">
+            <button class="control-btn" onclick="window.location.href='disaster_map.html'">
+                <i class="fas fa-exclamation-triangle"></i> Incidents
+            </button>
+            <button class="control-btn active">
+                <i class="fas fa-truck-medical"></i> Resources
+            </button>
+            <button class="control-btn" onclick="window.location.href='hazards.html'">
+                <i class="fas fa-warning"></i> Hazards
+            </button>
+            <button class="control-btn" onclick="window.location.href='evacuation.html'">
+                <i class="fas fa-running"></i> Evacuation
+            </button>
+        </div>
+    </header>
+
+    <main class="resource-map-main">
+        <div class="resource-sidebar">
+            <div class="resource-category">
+                <div class="category-header">
+                    <i class="fas fa-medkit"></i>
+                    <h3>Medical Resources</h3>
+                </div>
+                <div class="category-content">
+                    <div class="resource-stat">
+                        <span>Ambulances Available</span>
+                        <span>8/10</span>
+                    </div>
+                    <div class="resource-stat">
+                        <span>Medical Teams</span>
+                        <span>12/15</span>
+                    </div>
+                    <div class="resource-stat">
+                        <span>First Aid Kits</span>
+                        <span>45</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <div class="category-header">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Fire Resources</h3>
+                </div>
+                <div class="category-content">
+                    <div class="resource-stat">
+                        <span>Fire Trucks</span>
+                        <span>5/6</span>
+                    </div>
+                    <div class="resource-stat">
+                        <span>Fire Teams</span>
+                        <span>6/8</span>
+                    </div>
+                    <div class="resource-stat">
+                        <span>Water Tankers</span>
+                        <span>4</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <div class="category-header">
+                    <i class="fas fa-box"></i>
+                    <h3>Supply Resources</h3>
+                </div>
+                <div class="category-content">
+                    <div class="resource-stat">
+                        <span>Supply Vehicles</span>
+                        <span>7/10</span>
+                    </div>
+                    <div class="resource-stat">
+                        <span>Food Packages</span>
+                        <span>250</span>
+                    </div>
+                    <div class="resource-stat">
+                        <span>Water Supply</span>
+                        <span>500L</span>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="resource-panel">
+            <div class="statistics">
+                <div class="stat-card">
+                    <h4>Active Teams</h4>
+                    <div class="value">12</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Personnel</h4>
+                    <div class="value">48</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Vehicles</h4>
+                    <div class="value">15</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Response Time</h4>
+                    <div class="value">8m</div>
+                </div>
+            </div>
+
+            <div class="resource-status">
+                <h3>Resource Status</h3>
+                <div class="status-meters">
+                    <div class="status-meter">
+                        <div class="meter-header">
+                            <span>Medical Teams</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-meter">
+                        <div class="meter-header">
+                            <span>Fire Units</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-meter">
+                        <div class="meter-header">
+                            <span>Supply Teams</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>    </footer>
+
+    <!-- Load Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTu3TERfPEhKOOFlEgbGKvDCYi_4WQQg&libraries=places,directions"></script>
+    <script src="../js/resources_real.js"></script>
+</body>
+</html>

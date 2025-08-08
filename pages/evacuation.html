@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evacuation Routes - Zygen</title>
+    <link rel="stylesheet" href="../css/evacuation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+        
+        <div class="map-controls">
+            <button class="control-btn" onclick="window.location.href='disaster_map.html'">
+                <i class="fas fa-exclamation-triangle"></i> Incidents
+            </button>
+            <button class="control-btn" onclick="window.location.href='resources_real.html'">
+                <i class="fas fa-truck-medical"></i> Resources
+            </button>
+            <button class="control-btn" onclick="window.location.href='hazards.html'">
+                <i class="fas fa-warning"></i> Hazards
+            </button>
+            <button class="control-btn active">
+                <i class="fas fa-running"></i> Evacuation
+            </button>
+        </div>
+    </header>
+
+    <main class="evacuation-map-main">
+        <div class="evacuation-sidebar">
+            <div class="route-finder">
+                <h3>Find Evacuation Route</h3>
+                <div class="route-search">
+                    <div class="search-input">
+                        <i class="fas fa-location-dot"></i>
+                        <input type="text" id="currentLocation" placeholder="Your Location">
+                    </div>
+                    <div class="search-input">
+                        <i class="fas fa-shield-alt"></i>
+                        <input type="text" id="safeZone" placeholder="Nearest Safe Zone">
+                    </div>
+                    <button id="findRoute" class="find-route-btn">
+                        <i class="fas fa-route"></i> Find Route
+                    </button>
+                </div>
+            </div>
+
+            <div class="safe-zones-list">
+                <h3>Nearby Safe Zones</h3>
+                <div id="safeZonesList" class="zones-items">
+                    <!-- Safe zones will be added dynamically -->
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-overlay">
+                <div class="overlay-controls">
+                    <button class="overlay-btn" id="toggleTraffic">
+                        <i class="fas fa-car"></i> Traffic
+                    </button>
+                    <button class="overlay-btn" id="toggleSafeZones">
+                        <i class="fas fa-shield-alt"></i> Safe Zones
+                    </button>
+                    <button class="overlay-btn" id="toggleRoutes">
+                        <i class="fas fa-route"></i> All Routes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="evacuation-panel">
+            <div class="route-info">
+                <h3>Route Information</h3>
+                <div id="routeDetails" class="route-details">
+                    <div class="route-stat">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-info">
+                            <h4>ETA</h4>
+                            <span id="etaTime">-- min</span>
+                        </div>
+                    </div>
+                    <div class="route-stat">
+                        <i class="fas fa-road"></i>
+                        <div class="stat-info">
+                            <h4>Distance</h4>
+                            <span id="routeDistance">-- km</span>
+                        </div>
+                    </div>
+                    <div class="route-stat">
+                        <i class="fas fa-traffic-light"></i>
+                        <div class="stat-info">
+                            <h4>Traffic</h4>
+                            <span id="trafficStatus">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evacuation-status">
+                <h3>Evacuation Status</h3>
+                <div class="status-meters">
+                    <div class="status-meter">
+                        <div class="meter-header">
+                            <span>Zone A Evacuation</span>
+                            <span class="status-level complete">85%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-meter">
+                        <div class="meter-header">
+                            <span>Zone B Evacuation</span>
+                            <span class="status-level in-progress">60%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="status-meter">
+                        <div class="meter-header">
+                            <span>Zone C Evacuation</span>
+                            <span class="status-level pending">25%</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTu3TERfPEhKOOFlEgbGKvDCYi_4WQQg&libraries=places,directions"></script>
+    <script src="../js/evacuation.js"></script>
+</body>
+</html> 

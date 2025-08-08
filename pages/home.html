@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zygen - Disaster Relief Platform</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+    </header>
+
+    <main>
+        <form id="sosForm" action="submit_sos.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="location" id="locationInput">
+            <input type="hidden" name="video" id="videoInput">
+            <button type="button" class="sos-btn">SOS</button>
+        </form>
+        <video id="preview" style="display:none;"></video>
+
+        <section class="critical-needs">
+            <h2>Critical Resources Available</h2>
+            <div class="resource-overview">
+                <div class="resource-tile" data-resource="food">
+                    <div class="resource-icon food-icon"></div>
+                    <h3>Food</h3>
+                    <div class="resource-info">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <p>100 Meals Available</p>
+                    </div>
+                    <button class="action-btn" onclick="requestResource('Food')">
+                        <i class="fas fa-utensils"></i> Request
+                    </button>
+                </div>
+
+                <div class="resource-tile" data-resource="water">
+                    <div class="resource-icon water-icon"></div>
+                    <h3>Water</h3>
+                    <div class="resource-info">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <p>100 Liters Available</p>
+                    </div>
+                    <button class="action-btn" onclick="requestResource('Water')">
+                        <i class="fas fa-tint"></i> Request
+                    </button>
+                </div>
+
+                <div class="resource-tile" data-resource="shelter">
+                    <div class="resource-icon shelter-icon"></div>
+                    <h3>Shelter</h3>
+                    <div class="resource-info">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <p>90 Beds Available</p>
+                    </div>
+                    <button class="action-btn" onclick="requestResource('Shelter')">
+                        <i class="fas fa-home"></i> Request
+                    </button>
+                </div>
+
+                <div class="resource-tile" data-resource="medical">
+                    <div class="resource-icon medical-icon"></div>
+                    <h3>Medical</h3>
+                    <div class="resource-info">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <p>100 Supplies Available</p>
+                    </div>
+                    <button class="action-btn" onclick="requestResource('Medical')">
+                        <i class="fas fa-medkit"></i> Request
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-donate">
+            <h2>Join Our Mission</h2>
+            <p>Your support can make a crucial difference in disaster relief efforts.</p>
+            <div class="buttons-container">
+                <button class="volunteer-btn" onclick="location.href='volunteer_now.html'">
+                    <i class="fas fa-hands-helping"></i> Volunteer Now
+                </button>
+                <button class="donate-btn" onclick="location.href='donate_now.html'">
+                    <i class="fas fa-heart"></i> Donate Now
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <button class="footer-btn" id="home"><i class="fas fa-home"></i></button>
+        <button class="footer-btn" id="requestResources"><i class="fas fa-hand-holding-heart"></i></button>
+        <button class="footer-btn" id="realTimeMap"><i class="fas fa-map-marked-alt"></i></button>
+        <button class="footer-btn" id="chat"><i class="fas fa-comments"></i></button>
+        <button class="footer-btn" id="emergencyContact"><i class="fas fa-phone-alt"></i></button>
+    </footer>
+
+    <script src="../js/../js/home.js"></script>
+</body>
+</html>

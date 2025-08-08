@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - Zygen</title>
+    <link rel="stylesheet" href="../css/donate_now.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+    </header>
+
+    <main class="donate-main">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Your Support Saves Lives</h1>
+                <p>Every donation helps us respond faster and reach further in times of crisis</p>
+                <button class="cta-button" onclick="scrollToDonate()">
+                    <i class="fas fa-heart"></i>
+                    Donate Now
+                </button>
+            </div>
+            <div class="impact-counter">
+                <div class="counter-item">
+                    <span class="count" data-target="50000">0</span>
+                    <span class="label">Lives Impacted</span>
+                </div>
+                <div class="counter-item">
+                    <span class="count" data-target="100">0</span>
+                    <span class="label">Active Projects</span>
+                </div>
+                <div class="counter-item">
+                    <span class="count" data-target="25">0</span>
+                    <span class="label">Districts Covered</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section">
+            <h2><i class="fas fa-chart-line"></i> Your Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <img src="https://img.freepik.com/free-photo/volunteers-helping-with-food-donations_23-2149182010.jpg" alt="Food Aid">
+                    <div class="impact-content">
+                        <h3>Food Security</h3>
+                        <p>₹1000 provides emergency food supplies for a family of four for one week</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <p class="progress-text">75% of monthly goal reached</p>
+                        <button class="donate-btn" onclick="selectAmount(1000)">Donate ₹1000</button>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <img src="https://img.freepik.com/free-photo/doctor-examining-elderly-patient_23-2148968892.jpg" alt="Medical Aid">
+                    <div class="impact-content">
+                        <h3>Medical Support</h3>
+                        <p>₹2000 provides essential medical supplies and care for disaster victims</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%"></div>
+                        </div>
+                        <p class="progress-text">60% of monthly goal reached</p>
+                        <button class="donate-btn" onclick="selectAmount(2000)">Donate ₹2000</button>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <img src="https://img.freepik.com/free-photo/group-volunteers-helping-with-donations_23-2149182004.jpg" alt="Emergency Shelter">
+                    <div class="impact-content">
+                        <h3>Emergency Shelter</h3>
+                        <p>₹5000 provides temporary shelter and basic amenities for displaced families</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                        <p class="progress-text">45% of monthly goal reached</p>
+                        <button class="donate-btn" onclick="selectAmount(5000)">Donate ₹5000</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Form Section -->
+        <section class="donation-section" id="donateSection">
+            <h2><i class="fas fa-gift"></i> Make a Donation</h2>
+            <div class="donation-container">
+                <div class="donation-options">
+                    <h3>Select Amount</h3>
+                    <div class="amount-grid">
+                        <button class="amount-btn" onclick="selectAmount(500)">₹500</button>
+                        <button class="amount-btn" onclick="selectAmount(1000)">₹1000</button>
+                        <button class="amount-btn" onclick="selectAmount(2000)">₹2000</button>
+                        <button class="amount-btn" onclick="selectAmount(5000)">₹5000</button>
+                        <button class="amount-btn custom" onclick="showCustomAmount()">Custom</button>
+                    </div>
+
+                    <div class="donation-type">
+                        <button class="type-btn active" onclick="setDonationType('one-time')">One-time</button>
+                        <button class="type-btn" onclick="setDonationType('monthly')">Monthly</button>
+                    </div>
+
+                    <form id="donationForm" class="donation-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pan">PAN Number (for tax benefits)</label>
+                            <input type="text" id="pan">
+                        </div>
+
+                        <div class="payment-methods">
+                            <h3>Payment Method</h3>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <span class="option-content">
+                                        <i class="fas fa-credit-card"></i>
+                                        Card
+                                    </span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="upi">
+                                    <span class="option-content">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        UPI
+                                    </span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="netbanking">
+                                    <span class="option-content">
+                                        <i class="fas fa-university"></i>
+                                        Net Banking
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-heart"></i>
+                            Complete Donation
+                        </button>
+                    </form>
+                </div>
+
+                <div class="donation-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-shield-alt"></i> Secure Donation</h3>
+                        <p>Your payment is protected by bank-grade security</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-file-alt"></i> Tax Benefits</h3>
+                        <p>Get tax exemption under 80G of Income Tax Act</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-chart-pie"></i> Impact Tracking</h3>
+                        <p>Receive regular updates about your donation's impact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Corporate Partnership Section -->
+        <section class="partnership-section">
+            <h2><i class="fas fa-handshake"></i> Corporate Partnerships</h2>
+            <div class="partnership-grid">
+                <div class="partner-card">
+                    <img src="https://img.freepik.com/free-vector/gradient-company-logo_23-2148937223.jpg" alt="Partner 1">
+                </div>
+                <div class="partner-card">
+                    <img src="https://img.freepik.com/free-vector/gradient-company-logo_23-2148937224.jpg" alt="Partner 2">
+                </div>
+                <div class="partner-card">
+                    <img src="https://img.freepik.com/free-vector/gradient-company-logo_23-2148937225.jpg" alt="Partner 3">
+                </div>
+                <div class="partner-card">
+                    <img src="https://img.freepik.com/free-vector/gradient-company-logo_23-2148937226.jpg" alt="Partner 4">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <div class="checkmark draw"></div>
+                </div>
+            </div>
+            <div class="success-header">
+                <h2>Thank You for Your Support!</h2>
+                <p class="subtitle">Your generosity makes a difference</p>
+            </div>
+            <div class="donation-details">
+                <div class="detail-card amount">
+                    <i class="fas fa-heart"></i>
+                    <div class="detail-text">
+                        <span class="label">Donation Amount</span>
+                        <span id="donationAmount" class="value">₹0</span>
+                    </div>
+                </div>
+                <div class="detail-card transaction">
+                    <i class="fas fa-receipt"></i>
+                    <div class="detail-text">
+                        <span class="label">Transaction ID</span>
+                        <span id="transactionId" class="value">XXXXXX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="impact-message">
+                <h3>Your Impact</h3>
+                <div class="impact-icons">
+                    <div class="impact-icon">
+                        <i class="fas fa-utensils"></i>
+                        <span>Meals</span>
+                    </div>
+                    <div class="impact-icon">
+                        <i class="fas fa-medkit"></i>
+                        <span>Medical Aid</span>
+                    </div>
+                    <div class="impact-icon">
+                        <i class="fas fa-home"></i>
+                        <span>Shelter</span>
+                    </div>
+                </div>
+            </div>
+            <div class="next-steps">
+                <h3>What's Next?</h3>
+                <div class="steps-grid">
+                    <div class="step">
+                        <i class="fas fa-envelope"></i>
+                        <p>Receipt sent to your email</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Track impact in updates</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-file-alt"></i>
+                        <p>Tax benefit document ready</p>
+                    </div>
+                </div>
+            </div>
+            <div class="share-section">
+                <p>Spread the word and inspire others!</p>
+                <div class="modal-social-buttons">
+                    <button class="modal-social facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="modal-social x">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo">
+                            <path fill="#FFFFFF" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                        </svg>
+                    </button>
+                    <button class="modal-social whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                    <button class="modal-social instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn close-btn" onclick="closeModal(),window.location.href='home.html'">
+                    <i class="fas fa-times"></i>
+                    Close
+                </button>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Amount Modal -->
+    <div id="customAmountModal" class="modal">
+        <div class="modal-content custom-amount-content">
+            <span class="close-modal" onclick="closeCustomModal()">&times;</span>
+            <h2>Enter Custom Amount</h2>
+            <div class="custom-amount-input">
+                <span class="currency-symbol">₹</span>
+                <input type="number" id="customAmountInput" min="100" placeholder="Enter amount">
+            </div>
+            <div class="suggested-amounts">
+                <p>Suggested Amounts:</p>
+                <div class="suggestion-chips">
+                    <button onclick="setCustomAmount(750)">₹750</button>
+                    <button onclick="setCustomAmount(1500)">₹1,500</button>
+                    <button onclick="setCustomAmount(3000)">₹3,000</button>
+                    <button onclick="setCustomAmount(7500)">₹7,500</button>
+                </div>
+            </div>
+            <button class="confirm-amount-btn" onclick="confirmCustomAmount()">
+                <i class="fas fa-check"></i>
+                Confirm Amount
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>
+    </footer>
+
+    <script src="../js/../js/donate_now.js"></script>
+</body>
+</html> 

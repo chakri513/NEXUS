@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency - Zygen</title>
+    <link rel="stylesheet" href="../css/emergency.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+    </header>
+
+    <main class="emergency-main">
+        <!-- Quick Action Buttons -->
+        <div class="quick-actions">
+            <button class="sos-btn" onclick="triggerSOS()">
+                <i class="fas fa-exclamation-triangle"></i>
+                SOS
+            </button>
+            <button class="call-btn" onclick="callEmergency('112')">
+                <i class="fas fa-phone"></i>
+                Call 112
+            </button>
+        </div>
+
+        <!-- Emergency Contacts Section -->
+        <section class="emergency-section contacts-section">
+            <h2><i class="fas fa-phone-alt"></i> Emergency Contacts</h2>
+            <div class="contacts-grid">
+                <div class="contact-card" onclick="callEmergency('100')">
+                    <div class="contact-icon police">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Police</h3>
+                    <p class="phone">100</p>
+                    <div class="contact-actions">
+                        <button class="call-now">Call Now</button>
+                        <button class="save-contact">Save</button>
+                    </div>
+                </div>
+
+                <div class="contact-card" onclick="callEmergency('101')">
+                    <div class="contact-icon fire">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Fire Service</h3>
+                    <p class="phone">101</p>
+                    <div class="contact-actions">
+                        <button class="call-now">Call Now</button>
+                        <button class="save-contact">Save</button>
+                    </div>
+                </div>
+
+                <div class="contact-card" onclick="callEmergency('108')">
+                    <div class="contact-icon ambulance">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3>Ambulance</h3>
+                    <p class="phone">108</p>
+                    <div class="contact-actions">
+                        <button class="call-now">Call Now</button>
+                        <button class="save-contact">Save</button>
+                    </div>
+                </div>
+
+                <div class="contact-card" onclick="callEmergency('1098')">
+                    <div class="contact-icon helpline">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Child Helpline</h3>
+                    <p class="phone">1098</p>
+                    <div class="contact-actions">
+                        <button class="call-now">Call Now</button>
+                        <button class="save-contact">Save</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Map Section -->
+        <section class="emergency-section map-section">
+            <h2><i class="fas fa-map-marked-alt"></i> Emergency Services Near You</h2>
+            <div class="map-container">
+                <div id="emergencyMap"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot hospital"></span>
+                        Hospitals
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot police"></span>
+                        Police Stations
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot fire"></span>
+                        Fire Stations
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Protocols Section -->
+        <section class="emergency-section protocols-section">
+            <h2><i class="fas fa-clipboard-list"></i> Emergency Protocols</h2>
+            <div class="protocols-grid">
+                <div class="protocol-card">
+                    <img src="https://img.freepik.com/free-vector/first-aid-concept-illustration_114360-7096.jpg" alt="First Aid">
+                    <h3>First Aid</h3>
+                    <div class="protocol-content">
+                        <ul>
+                            <li>Check consciousness & breathing</li>
+                            <li>Call emergency services</li>
+                            <li>Stop any bleeding</li>
+                            <li>Protect from environment</li>
+                        </ul>
+                        <button class="learn-more" onclick="showProtocolDetails('firstaid')">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="protocol-card">
+                    <img src="https://img.freepik.com/free-vector/fire-safety-concept-illustration_114360-7096.jpg" alt="Fire Safety">
+                    <h3>Fire Safety</h3>
+                    <div class="protocol-content">
+                        <ul>
+                            <li>Activate fire alarm</li>
+                            <li>Call fire service</li>
+                            <li>Use nearest exit</li>
+                            <li>Stay low to avoid smoke</li>
+                        </ul>
+                        <button class="learn-more" onclick="showProtocolDetails('fire')">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="protocol-card">
+                    <img src="https://img.freepik.com/free-vector/natural-disaster-concept-illustration_114360-7096.jpg" alt="Natural Disasters">
+                    <h3>Natural Disasters</h3>
+                    <div class="protocol-content">
+                        <ul>
+                            <li>Stay informed</li>
+                            <li>Follow evacuation orders</li>
+                            <li>Keep emergency kit ready</li>
+                            <li>Help others if safe</li>
+                        </ul>
+                        <button class="learn-more" onclick="showProtocolDetails('disaster')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Protocol Details Modal -->
+    <div id="protocolModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn active">
+            <i class="fas fa-phone-alt"></i>
+        </button>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTu3TERfPEhKOOFlEgbGKvDCYi_4WQQg&libraries=places,directions"></script>
+    <script src="../js/emergency.js"></script>
+</body>
+</html> 

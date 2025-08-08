@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat - Zygen</title>
+    <link rel="stylesheet" href="../css/group_chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+    </header>
+
+    <main class="chat-main">
+        <div class="chat-sidebar">
+            <div class="user-profile">
+                <div class="profile-image">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="User Avatar">
+                    <span class="status-dot online"></span>
+                </div>
+                <div class="profile-info">
+                    <h3>John Doe</h3>
+                    <p>Emergency Responder</p>
+                </div>
+            </div>
+
+            <div class="chat-filters">
+                <button class="filter-btn active" data-type="all">All Chats</button>
+                <button class="filter-btn" data-type="groups">Groups</button>
+                <button class="filter-btn" data-type="direct">Direct</button>
+            </div>
+
+            <div class="search-chat">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search chats...">
+            </div>
+
+            <div class="chat-list" id="chatList">
+                <!-- Chat list items will be added dynamically -->
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-info">
+                    <h2>Emergency Response Team</h2>
+                    <p>12 members • 3 online</p>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" title="Share Location">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added dynamically -->
+            </div>
+
+            <div class="chat-input">
+                <button class="emoji-btn" title="Emoji">
+                    <i class="far fa-smile"></i>
+                </button>
+                <div class="message-input">
+                    <input type="text" id="messageInput" placeholder="Type a message...">
+                </div>
+                <button class="send-btn" title="Send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-details">
+            <div class="group-info">
+                <img src="https://api.dicebear.com/7.x/identicon/svg?seed=emergency" alt="Group Avatar" class="group-avatar">
+                <h3>Emergency Response Team</h3>
+                <p class="group-description">
+                    Coordination and communication channel for emergency response operations.
+                </p>
+            </div>
+
+            <div class="members-list">
+                <h4>Members (12)</h4>
+                <div class="members-container" id="membersContainer">
+                    <!-- Members will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script src="../js/group_chat.js"></script>
+</body>
+</html>

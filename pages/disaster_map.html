@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Response Map - Zygen</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Essential map styles */
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        .map-container {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+        
+        <!-- Replace the existing map-controls div with this -->
+<div class="map-controls">
+    <button class="control-btn active" onclick="window.location.href='disaster_map.html'">
+        <i class="fas fa-exclamation-triangle"></i> Incidents
+    </button>
+    <button class="control-btn" onclick="window.location.href='resources_real.html'">
+        <i class="fas fa-truck-medical"></i> Resources
+    </button>
+    <button class="control-btn" onclick="window.location.href='hazards.html'">
+        <i class="fas fa-warning"></i> Hazards
+    </button>
+    <button class="control-btn" onclick="window.location.href='evacuation.html'">
+        <i class="fas fa-running"></i> Evacuation
+    </button>
+</div>
+    </header>
+
+    <main class="disaster-map-main">
+        <div class="map-sidebar">
+            <div class="incident-list">
+                <h3>Active Incidents</h3>
+                <div id="activeIncidents" class="incident-items">
+                    <!-- Incidents will be added here -->
+                </div>
+            </div>
+            <div class="legend">
+                <h3>Map Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="marker severe"></span>
+                        <span>Severe Incident</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="marker moderate"></span>
+                        <span>Moderate Incident</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="marker minor"></span>
+                        <span>Minor Incident</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-overlay">
+                <div class="overlay-controls">
+                    <button class="overlay-btn" id="toggleHeatmap">
+                        <i class="fas fa-fire"></i> Heatmap
+                    </button>
+                    <button class="overlay-btn" id="toggleTraffic">
+                        <i class="fas fa-car"></i> Traffic
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h4>Affected People</h4>
+                        <span id="affectedCount">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-ambulance"></i>
+                    <div class="stat-info">
+                        <h4>Response Teams</h4>
+                        <span id="teamCount">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-house-damage"></i>
+                    <div class="stat-info">
+                        <h4>Damaged Structures</h4>
+                        <span id="damageCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="footer-btn" onclick="window.location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='request_resources.html'">
+            <i class="fas fa-hand-holding-heart"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='disaster_map.html'">
+            <i class="fas fa-map-marked-alt"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='group_chat.html'">
+            <i class="fas fa-comments"></i>
+        </button>
+        <button class="footer-btn" onclick="window.location.href='resources.html'">
+            <i class="fas fa-phone-alt"></i>
+        </button>
+    </footer>
+
+    <script>
+        // Initial map setup
+        function initMap() {
+            window.map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 16.3067, lng: 80.4365 },
+                zoom: 12,
+                styles: mapStyles
+            });
+            // Initialize the rest of the functionality
+            initializeMapFeatures();
+        }
+    </script>
+    <script src="../js/../js/disaster_map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTu3TERfPEhKOOFlEgbGKvDCYi_4WQQg&libraries=visualization&callback=initMap" async defer></script>
+</body>
+</html>

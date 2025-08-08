@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), 
+                linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    min-height: 100vh;
+    color: #FFFFFF;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(22, 33, 62, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    height: 40px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin: 0;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Main Content */
+main {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* SOS Button */
+.sos-btn {
+    display: block;
+    margin: 30px auto;
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    border: 3px solid #FF4848;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sos-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FF4848;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.sos-btn:hover::before {
+    transform: scale(1);
+}
+
+/* Resource Section */
+.critical-needs {
+    padding: 20px;
+}
+
+.critical-needs h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.resource-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.resource-tile {
+    background: rgba(22, 33, 62, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.resource-tile:hover {
+    transform: translateY(-10px);
+}
+
+.resource-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.food-icon::before { 
+    content: '🍽️';
+    font-size: 24px;
+}
+.water-icon::before { 
+    content: '💧';
+    font-size: 24px;
+}
+.shelter-icon::before { 
+    content: '🏠';
+    font-size: 24px;
+}
+.medical-icon::before { 
+    content: '🏥';
+    font-size: 24px;
+}
+
+.resource-tile h3 {
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    height: 8px;
+}
+
+.progress {
+    height: 100%;
+    transition: width 0.3s ease;
+    background: linear-gradient(45deg, #4ECDC4, #71D8D1);
+}
+
+.action-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid #4ECDC4;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.action-btn:hover {
+    background: #4ECDC4;
+    transform: translateY(-2px);
+}
+
+/* Hero Donate Section */
+.hero-donate {
+    background: rgba(22, 33, 62, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-donate h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.volunteer-btn, .donate-btn {
+    background: transparent;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.volunteer-btn {
+    border: 2px solid #4ECDC4;
+    color: #4ECDC4;
+}
+
+.donate-btn {
+    border: 2px solid #FF6B6B;
+    color: #FF6B6B;
+}
+
+.volunteer-btn:hover {
+    background: #4ECDC4;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.donate-btn:hover {
+    background: #FF6B6B;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: rgba(22, 33, 62, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.footer-btn {
+    background: transparent;
+    border: none;
+    color: #B8B8B8;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+    color: #4ECDC4;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .resource-overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-overview {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .resource-tile {
+        padding: 15px;
+    }
+
+    .hero-donate {
+        margin: 40px 20px;
+        padding: 30px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .resource-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-tile {
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .sos-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 24px;
+    }
+}

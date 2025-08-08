@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Resources - Zygen</title>
+    <link rel="stylesheet" href="../css/request_resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logo.png" alt="Zygen Logo" class="logo">
+        <h1>Zygen</h1>
+    </header>
+
+    <main class="request-main">
+        <section class="category-section">
+            <h2>Select Resource Category</h2>
+            <div class="categories">
+                <button class="category-button" id="Food">
+                    <div class="category-icon">
+                        <img src="../assets/images/food.png" alt="Food">
+                    </div>
+                    <p>Food</p>
+                </button>
+                <button class="category-button" id="Water">
+                    <div class="category-icon">
+                        <img src="../assets/images/water.png" alt="Water">
+                    </div>
+                    <p>Water</p>
+                </button>
+                <button class="category-button" id="Shelter">
+                    <div class="category-icon">
+                        <img src="../assets/images/bed.png" alt="Shelter">
+                    </div>
+                    <p>Shelter</p>
+                </button>
+                <button class="category-button" id="Medical">
+                    <div class="category-icon">
+                        <img src="../assets/images/Medical Aid.png" alt="Medical Aid">
+                    </div>
+                    <p>Medical Aid</p>
+                </button>
+            </div>
+        </section>
+
+        <section class="details-section">
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="urgency">Urgency Level</label>
+                <select id="urgency" name="urgency" required>
+                    <option value="" disabled selected>Select urgency</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="non-urgent">Non-Urgent</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+            </div>
+
+            <button class="submit-button" disabled>Submit Request</button>
+        </section>
+    </main>
+
+<!-- Add this right before the closing </body> tag if not already present -->
+<div id="popup-screen" class="popup-screen">
+    <div class="popup-content">
+        <div id="popup-message"></div>
+        <button id="close-popup-btn">Close</button>
+    </div>
+</div>
+    <footer>
+        <button class="footer-btn" id="home"><i class="fas fa-home"></i></button>
+        <button class="footer-btn" id="requestResources"><i class="fas fa-hand-holding-heart"></i></button>
+        <button class="footer-btn" id="realTimeMap"><i class="fas fa-map-marked-alt"></i></button>
+        <button class="footer-btn" id="chat"><i class="fas fa-comments"></i></button>
+        <button class="footer-btn" id="emergencyContact"><i class="fas fa-phone-alt"></i></button>
+    </footer>
+
+    <script src="../js/request_resources.js"></script>
+</body>
+</html>
